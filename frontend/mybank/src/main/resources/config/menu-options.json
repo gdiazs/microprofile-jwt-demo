@@ -1,0 +1,22 @@
+{
+	"menus":[
+	
+		{ 
+			"id": "sideMenu",
+			"links": [
+				{
+					"url": "/mybank/accounts",
+					"label": "layout.application.menu.sideMenu.label.accounts"
+				},
+				{
+					"url": "/mybank/",
+					"label": "layout.application.menu.sideMenu.label.loans"
+				}
+			
+			]
+		}
+	
+	]
+
+}
+	

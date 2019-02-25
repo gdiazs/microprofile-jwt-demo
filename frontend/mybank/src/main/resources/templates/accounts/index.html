@@ -1,0 +1,39 @@
+<th:block xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/application">
+	<th:block layout:fragment="styles">
+		<style>
+			.mainView{
+				width: 90%;
+				margin-left: 10em;
+			}
+		
+		</style>
+	</th:block>
+
+	<th:block layout:fragment="view">
+		<div class="mainView">
+			<div class="col s12 m7">
+				<h3 class="header">Cuentas de <i th:text="${username}"></i></h3>
+
+				<div class="card horizontal">
+					<div class="card-image"></div>
+					<div class="card-stacked">
+						<div class="card-content">
+							<p>CR25010200009300254245</p>
+							<p>Balance: $1,0000.00</p>
+						</div>
+						<div class="card-action">
+							<a href="#">Transferir</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</th:block>
+
+
+</th:block>

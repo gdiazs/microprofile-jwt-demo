@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" th:href="@{/resources/commons/font-awesome-4.7.0/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{/resources/commons/css/materialize.min.css}" />
+    <link rel="stylesheet" th:href="@{/resources/layouts/application/css/styles.css}" />
+    <th:block layout:fragment="styles"></th:block>
+</head>
+
+<body>
+    <nav class="blue darken-3 white-text">
+
+		<div class="nav-wrapper">
+		      <a href="/keyring" class="brand-logo" style="max-width: 8%; height: auto; margin-left: .2em;">
+		      	eBanking
+		      </a>
+
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a th:href="@{/logout}">Salir</a></li>
+			</ul>
+			
+		</div>
+	</nav>
+    <aside>
+        <ul id="slide-out" class="sidenav sidenav-fixed sidenav-top">
+            <li th:each="linkOption : ${sidebarMenu.links}"><a th:href="${linkOption.url}" th:text="#{${linkOption.label}}"></a></li>
+        </ul>
+    </aside>
+
+    <main class="container container-center">
+        <div layout:fragment="view"></div>
+    </main>
+
+    <footer class="container">
+    </footer>
+
+    <th:block layout:fragment="scripts"></th:block>
+    <script type="text/javascript" th:src="@{/resources/commons/js/materialize.min.js}"></script>
+    <script type="text/javascript" th:src="@{/resources/layouts/application/js/main.js}"></script>
+</body>
+
+</html>
