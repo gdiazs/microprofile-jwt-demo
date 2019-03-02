@@ -32,7 +32,7 @@ swarm:
     data-sources:
       jdbc/h2ds:
         driver-name: driverh2
-        connection-url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        connection-url: jdbc:h2:~/data/db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         user-name: sa
         password: sa
     jdbc-drivers:

@@ -1,4 +1,4 @@
-package io.gdiazs.bank.accounts;
+package io.gdiazs.bank;
 
 import org.eclipse.microprofile.auth.LoginConfig;
 
@@ -10,10 +10,10 @@ import javax.ws.rs.core.Application;
 /**
  *
  */
-@ApplicationPath("/data")
-
+@ApplicationPath("/accounts")
 @LoginConfig(authMethod = "MP-JWT", realmName = "jwt-jaspi")
 @DeclareRoles({"protected"})
-
 public class AccountsRestApplication extends Application {
+	
+	
 }

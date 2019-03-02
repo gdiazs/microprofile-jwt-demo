@@ -3,48 +3,57 @@ package io.gdiazs.bank.accounts;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "ACCOUNTS")
 public class Account {
 
-	private String userId;
+	@EmbeddedId
+	private AccountPrimaryKey accountPrimeryKey;
 
-	private String iban;
-
+	@Column(name = "BALANCE")
 	private BigDecimal balance;
 
+	@Column(name = "COUNTRY")
 	private String country;
 
+	@Column(name = "CURRENCY")
 	private String currency;
 
+	@Column(name = "CREATED_AT")
 	private LocalDate createdAt;
+	
+	@Column(name = "CREATED_AT")
+	private LocalDate updatedAt;
+	
+	@Column(name = "VERSION")
+	private Integer version;
 
 	public Account() {
 	}
 
-	public Account(String userId, String iban, BigDecimal balance, String country, String currency,
-			LocalDate createdAt) {
-		super();
-		this.userId = userId;
-		this.iban = iban;
+	public Account(AccountPrimaryKey accountPrimeryKey, BigDecimal balance, String country, String currency,
+			LocalDate createdAt, LocalDate updatedAt, Integer version) {
+		this.accountPrimeryKey = accountPrimeryKey;
 		this.balance = balance;
 		this.country = country;
 		this.currency = currency;
 		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+		this.version = version;
 	}
 
-	public String getUserId() {
-		return userId;
+
+	public AccountPrimaryKey getAccountPrimeryKey() {
+		return accountPrimeryKey;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public String getIban() {
-		return iban;
-	}
-
-	public void setIban(String iban) {
-		this.iban = iban;
+	public void setAccountPrimeryKey(AccountPrimaryKey accountPrimeryKey) {
+		this.accountPrimeryKey = accountPrimeryKey;
 	}
 
 	public BigDecimal getBalance() {
@@ -53,14 +62,6 @@ public class Account {
 
 	public void setBalance(BigDecimal balance) {
 		this.balance = balance;
-	}
-
-	public LocalDate getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(LocalDate createdAt) {
-		this.createdAt = createdAt;
 	}
 
 	public String getCountry() {
@@ -79,4 +80,35 @@ public class Account {
 		this.currency = currency;
 	}
 
+	public LocalDate getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDate createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public LocalDate getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(LocalDate updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+	
+
+	 
+
+	
+	
+
+	
 }
