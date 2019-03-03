@@ -2,11 +2,11 @@ package io.gdiazs.bank.accounts;
 
 import java.util.List;
 
-import javax.inject.Named;
+import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Named
+@RequestScoped
 public class AccountsDAO {
 
 	private static final String JPQL_FIND_ALL_BY_USERID = "SELECT a FROM Account a where a.accountPrimeryKey.userId = :userId";

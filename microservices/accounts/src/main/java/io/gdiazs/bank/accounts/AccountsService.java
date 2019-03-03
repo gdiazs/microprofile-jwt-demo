@@ -2,11 +2,10 @@ package io.gdiazs.bank.accounts;
 
 import java.util.List;
 
-import javax.annotation.security.RolesAllowed;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.inject.Named;
 
-@Named
+@RequestScoped
 public class AccountsService {
 
 	@Inject
@@ -20,7 +19,7 @@ public class AccountsService {
 	}
 
 	public List<AccountDTO> getAccountsByUserId(String userId) {
-		return this.accountsConverter.convertAccountsToDto(this.accountsDAO.findAccountsByUserId(userId));
+		return this.accountsConverter.convert(this.accountsDAO.findAccountsByUserId(userId));
 	}
 
 	public Account findAccountByIban(String iban) {

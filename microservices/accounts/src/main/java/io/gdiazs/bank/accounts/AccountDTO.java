@@ -18,7 +18,7 @@ public class AccountDTO {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(final String userId) {
 		this.userId = userId;
 	}
 
@@ -26,7 +26,7 @@ public class AccountDTO {
 		return iban;
 	}
 
-	public void setIban(String iban) {
+	public void setIban(final String iban) {
 		this.iban = iban;
 	}
 
@@ -34,7 +34,7 @@ public class AccountDTO {
 		return currency;
 	}
 
-	public void setCurrency(String currency) {
+	public void setCurrency(final String currency) {
 		this.currency = currency;
 	}
 
@@ -42,7 +42,7 @@ public class AccountDTO {
 		return country;
 	}
 
-	public void setCountry(String country) {
+	public void setCountry(final String country) {
 		this.country = country;
 	}
 
@@ -50,11 +50,11 @@ public class AccountDTO {
 		return createdAt;
 	}
 
-	public void setCreatedAt(String createdAt) {
+	public void setCreatedAt(final String createdAt) {
 		this.createdAt = createdAt;
 	}
 
-	public void setBanace(String balance) {
+	public void setBanace(final String balance) {
 		this.balance = balance;
 		
 	}
@@ -63,7 +63,7 @@ public class AccountDTO {
 		return balance;
 	}
 
-	public void setBalance(String balance) {
+	public void setBalance(final String balance) {
 		this.balance = balance;
 	}
 	

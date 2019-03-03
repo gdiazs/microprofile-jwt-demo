@@ -26,10 +26,10 @@ public class Account {
 
 	@Column(name = "CREATED_AT")
 	private LocalDate createdAt;
-	
+
 	@Column(name = "UPDATED_AT")
 	private LocalDate updatedAt;
-	
+
 	@Column(name = "VERSION")
 	private Integer version;
 
@@ -46,7 +46,6 @@ public class Account {
 		this.updatedAt = updatedAt;
 		this.version = version;
 	}
-
 
 	public AccountPrimaryKey getAccountPrimeryKey() {
 		return accountPrimeryKey;
@@ -103,12 +102,5 @@ public class Account {
 	public void setVersion(Integer version) {
 		this.version = version;
 	}
-	
 
-	 
-
-	
-	
-
-	
 }

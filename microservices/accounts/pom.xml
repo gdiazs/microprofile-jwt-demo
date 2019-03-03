@@ -27,24 +27,6 @@
 			<artifactId>h2</artifactId>
 			<version>${version.h2}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.nimbusds</groupId>
-			<artifactId>nimbus-jose-jwt</artifactId>
-			<version>5.7</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.core</groupId>
-			<artifactId>jersey-client</artifactId>
-			<version>2.25.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.bouncycastle</groupId>
-			<artifactId>bcpkix-jdk15on</artifactId>
-			<version>1.53</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -69,12 +51,7 @@
 							</execution>
 						</executions>
 						<configuration>
-							<properties>
-<!-- 								<thorntail.flyway.jdbc-password>sa</thorntail.flyway.jdbc-password> -->
-<!-- 								<thorntail.flyway.jdbc-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</thorntail.flyway.jdbc-url> -->
-<!-- 								<thorntail.flyway.jdbc-user>sa</thorntail.flyway.jdbc-user> -->
-									<thorntail.flyway.jndi-datasource>java:/jdbc/H2DS</thorntail.flyway.jndi-datasource>
-							</properties>
+							<thorntail.flyway.jndi-datasource>java:/jdbc/H2DS</thorntail.flyway.jndi-datasource>
 						</configuration>
 					</plugin>
 				</plugins>
@@ -91,7 +68,6 @@
 						<type>pom</type>
 						<scope>import</scope>
 					</dependency>
-
 				</dependencies>
 			</dependencyManagement>
 			<dependencies>
