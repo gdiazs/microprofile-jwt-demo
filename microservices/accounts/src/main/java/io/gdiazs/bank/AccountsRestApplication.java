@@ -10,9 +10,9 @@ import javax.ws.rs.core.Application;
 /**
  *
  */
-@ApplicationPath("/accounts")
+@ApplicationPath("/")
 @LoginConfig(authMethod = "MP-JWT", realmName = "jwt-jaspi")
-@DeclareRoles({"protected"})
+@DeclareRoles({"admin"})
 public class AccountsRestApplication extends Application {
 	
 	

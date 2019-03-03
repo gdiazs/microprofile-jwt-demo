@@ -9,9 +9,9 @@ import javax.persistence.PersistenceContext;
 @Named
 public class AccountsDAO {
 
-	private static final String JPQL_FIND_ALL_BY_USERID = "SELECT a FROM Account where a.userId = :userId";
+	private static final String JPQL_FIND_ALL_BY_USERID = "SELECT a FROM Account a where a.accountPrimeryKey.userId = :userId";
 
-	private static final String JPQL_ALL = "select e from Account";
+	private static final String JPQL_ALL = "select e from Account e";
 
 	@PersistenceContext(unitName = "accountsPU")
 	private EntityManager entityManager;
@@ -25,7 +25,7 @@ public class AccountsDAO {
 	public List<Account> findAccountsByUserId(String userId) {
 		final List<Account> resultList = this.entityManager
 				.createQuery(JPQL_FIND_ALL_BY_USERID, Account.class)
-				.setParameter(":userId", userId).getResultList();
+				.setParameter("userId", userId).getResultList();
 		return resultList;
 
 	}

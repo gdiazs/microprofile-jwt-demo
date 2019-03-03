@@ -7,6 +7,7 @@ swarm:
     jwtauth:
       token:
         issuedBy: "https://server.example.com"
+        signerPubKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq1yKub7iSaHhG2zxMNqroOhBRbU2HPrt996JpIAb9Bcq1rQ5jyo8NvrTGXQexxR49gJffxmRn4e5Ri59E3HPV0Sb4QUMzmjZBbB8FVK9O7Qjy7bTxblSOoEwI5isd1GjwLIrsy6LopzhLc+vOsKQQsabO+0BfNj7tnQpNUGmojbDJawT4sL3zTBwB4nM4YML5Yy3MKqTxE9wtu+Qei4mEwoQky+TXoDWhQ3y+8UN3QPtz8b5jyiqpbU99/5i/s/IU1bqLI7lz0Y+wmD4yXnCkpSu6wv6dD6euk8PrXBFQ4JWhD4+gWMDntP7hUBAstQ9SdouWlvJxMASo6Q6aHs0JQIDAQAB
   security:
     security-domains:
       # name matches realm name used with LoginConfig
@@ -30,9 +31,10 @@ swarm:
               login-module-stack-ref: roles-lm-stack
   datasources:
     data-sources:
-      jdbc/h2ds:
+      jdbc-h2ds:
+        jndi-name: java:/jdbc/H2DS
         driver-name: driverh2
-        connection-url: jdbc:h2:~/data/db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        connection-url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         user-name: sa
         password: sa
     jdbc-drivers:
@@ -40,3 +42,6 @@ swarm:
         driver-class-name: org.h2.Driver
         xa-datasource-name: org.h2.jdbcx.JdbcDataSource
         driver-module-name: com.h2database.h2
+
+
+        

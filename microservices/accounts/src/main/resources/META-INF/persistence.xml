@@ -4,7 +4,7 @@
     xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-    <persistence-unit name="accountsPU" transaction-type="JTA">
-    	<jta-data-source>jdbc/h2ds</jta-data-source>
+    <persistence-unit name="accountsPU">
+    	<jta-data-source>java:/jdbc/H2DS</jta-data-source>
     </persistence-unit>
 </persistence>

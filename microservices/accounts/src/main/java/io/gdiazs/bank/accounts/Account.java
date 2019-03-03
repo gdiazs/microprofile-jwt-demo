@@ -27,7 +27,7 @@ public class Account {
 	@Column(name = "CREATED_AT")
 	private LocalDate createdAt;
 	
-	@Column(name = "CREATED_AT")
+	@Column(name = "UPDATED_AT")
 	private LocalDate updatedAt;
 	
 	@Column(name = "VERSION")
