@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
-import io.gdiazs.mybank.commons.interceptors.SecurityInterceptor;
+import io.gdiazs.mybank.security.SecurityInterceptor;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer{

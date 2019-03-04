@@ -13,11 +13,11 @@ public class ApplicationLayout {
 
 	
 	@Autowired
-	protected AppliactionLayoutService appliactionLayoutService;
+	protected ApplicationService applicationService;
 	
 	@ModelAttribute("sidebarMenu")
 	protected ApplicationMenuOption getSidebarMenu() {
-		return appliactionLayoutService.findMenuOptionsById("sideMenu");
+		return applicationService.findMenuOptionsById("sideMenu");
 	}
 	
 }

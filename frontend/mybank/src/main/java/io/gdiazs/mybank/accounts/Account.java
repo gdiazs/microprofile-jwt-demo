@@ -2,56 +2,68 @@ package io.gdiazs.mybank.accounts;
 
 public class Account {
 
+	private String userId;
 	
-	private String accountNumber;
+	private String iban;
 	
-	private String accountAlias;
+	private String currency;
 	
-	private String accountBalance;
+	private String country;
 	
-	private String accountCurrency;
+	private String createdAt;
 	
-	private Boolean enabled;
+	private String balance;
 
-	public String getAccountNumber() {
-		return accountNumber;
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
-	public String getAccountAlias() {
-		return accountAlias;
+	public String getIban() {
+		return iban;
 	}
 
-	public void setAccountAlias(String accountAlias) {
-		this.accountAlias = accountAlias;
+	public void setIban(String iban) {
+		this.iban = iban;
 	}
 
-	public String getAccountBalance() {
-		return accountBalance;
+	public String getCurrency() {
+		return currency;
 	}
 
-	public void setAccountBalance(String accountBalance) {
-		this.accountBalance = accountBalance;
+	public void setCurrency(String currency) {
+		this.currency = currency;
 	}
 
-	public String getAccountCurrency() {
-		return accountCurrency;
+	public String getCountry() {
+		return country;
 	}
 
-	public void setAccountCurrency(String accountCurrency) {
-		this.accountCurrency = accountCurrency;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
-	public Boolean getEnabled() {
-		return enabled;
+	public String getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
-	} 
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public String getBalance() {
+		return balance;
+	}
+
+	public void setBalance(String balance) {
+		this.balance = balance;
+	}
+	
+	
+	
 	
 	
 	

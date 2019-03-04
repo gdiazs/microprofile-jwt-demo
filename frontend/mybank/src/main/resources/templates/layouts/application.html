@@ -11,12 +11,12 @@
     <th:block layout:fragment="styles"></th:block>
 </head>
 
-<body>
+<body class=" blue-grey lighten-5">
     <nav class="blue darken-3 white-text">
 
 		<div class="nav-wrapper">
-		      <a href="/keyring" class="brand-logo" style="max-width: 8%; height: auto; margin-left: .2em;">
-		      	eBanking
+		      <a th:href="@{/}" class="brand-logo" style="max-width: 8%; height: auto; margin-left: .2em;">
+		      	MyBank
 		      </a>
 
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -26,8 +26,8 @@
 		</div>
 	</nav>
     <aside>
-        <ul id="slide-out" class="sidenav sidenav-fixed sidenav-top">
-            <li th:each="linkOption : ${sidebarMenu.links}"><a th:href="${linkOption.url}" th:text="#{${linkOption.label}}"></a></li>
+        <ul id="slide-out" class="sidenav sidenav-fixed sidenav-top blue-grey darken-4">
+            <li th:each="linkOption : ${sidebarMenu.links}"><a class="white-text" th:href="${linkOption.url}" th:text="#{${linkOption.label}}"></a></li>
         </ul>
     </aside>
 

@@ -11,6 +11,10 @@
 				{
 					"url": "/mybank/",
 					"label": "layout.application.menu.sideMenu.label.loans"
+				},
+				{
+					"url": "/mybank/",
+					"label": "layout.application.menu.sideMenu.label.payments"
 				}
 			
 			]

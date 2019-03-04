@@ -55,7 +55,9 @@ public class AuthenticationController {
 	
 	
 	private void saveCookie(final HttpServletResponse response, final String jwt) {
-		response.addCookie(new Cookie(USER_COOKIE, jwt));
+		final Cookie cookie = new Cookie(USER_COOKIE, jwt);
+		cookie.setMaxAge(30);
+		response.addCookie(cookie);
 	}
 	
 	

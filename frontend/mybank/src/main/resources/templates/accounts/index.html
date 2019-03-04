@@ -17,12 +17,12 @@
 			<div class="col s12 m7">
 				<h3 class="header">Cuentas de <i th:text="${username}"></i></h3>
 
-				<div class="card horizontal">
+				<div th:each="account : ${accounts}" class="card horizontal">
 					<div class="card-image"></div>
 					<div class="card-stacked">
 						<div class="card-content">
-							<p>CR25010200009300254245</p>
-							<p>Balance: $1,0000.00</p>
+						    <span class="card-title" th:text="'IBAN: ' + ${account.iban}">Card Title</span>
+							<label>Balance:  </label><span th:text="${account.balance} + ' ' + ${account.currency}">Balance: $1,0000.00</span>
 						</div>
 						<div class="card-action">
 							<a href="#">Transferir</a>
