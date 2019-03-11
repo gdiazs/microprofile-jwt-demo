@@ -1,4 +1,4 @@
-package io.gdiazs.keyring.keyring;
+package io.gdiazs.mybank;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

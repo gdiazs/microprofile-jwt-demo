@@ -1,0 +1,36 @@
+version: '3'
+
+# You must create a network base in a driver (default is bridge)
+networks:
+  mybank:
+    driver: bridge
+
+services:
+  #Define each services
+  #Front end needs connects to other services. It does by hostname ID image defined by docker
+  frontend:
+    image: 'mybank:0.0.1-SNAPSHOT'
+    ports:
+      - 5000:5000
+    depends_on: 
+      - authentication
+      - accounts
+    networks:
+      - mybank
+    links:
+      - authentication
+      - accounts
+
+  authentication:
+    image: api-authentication:1.0-SNAPSHOT
+    ports:
+      - 8080:8080
+    networks:
+      - mybank
+
+  accounts:
+    image: api-accounts:1.0-SNAPSHOT
+    ports:
+      - 8081:8080
+    networks:
+      - mybank

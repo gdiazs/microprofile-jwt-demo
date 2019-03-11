@@ -54,6 +54,37 @@
 							<thorntail.flyway.jndi-datasource>java:/jdbc/H2DS</thorntail.flyway.jndi-datasource>
 						</configuration>
 					</plugin>
+					<plugin>
+						<groupId>io.fabric8</groupId>
+						<artifactId>docker-maven-plugin</artifactId>
+						<version>0.28.0</version>
+						<configuration>
+
+							<images>
+								<image>
+									<name>api-${project.name}:${project.version}</name>
+									<build>
+										<dockerFileDir>${project.basedir}</dockerFileDir>
+									</build>
+									<run>
+										<ports>8081:8080</ports>
+										<cmd>java -jar ${project.name}-thorntail.jar</cmd>
+									</run>
+								</image>
+							</images>
+
+						</configuration>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>
+										build
+									</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 			<properties>
