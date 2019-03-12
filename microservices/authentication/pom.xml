@@ -64,7 +64,9 @@
 										<dockerFileDir>${project.basedir}</dockerFileDir>
 									</build>
 									<run>
-										<ports>8080:8080</ports>
+										<ports>
+											<port>8080:8080</port>
+										</ports>
 										<cmd>java -jar ${project.name}-thorntail.jar</cmd>
 									</run>
 								</image>

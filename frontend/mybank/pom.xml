@@ -82,7 +82,9 @@
 								<dockerFileDir>${project.basedir}</dockerFileDir>
 							</build>
 							<run>
-								<ports>5000:5000</ports>
+								<ports>
+									<port>5000:5000</port>
+								</ports>
 								<cmd>java -jar ${project.name}-springboot.jar</cmd>
 							</run>
 						</image>
